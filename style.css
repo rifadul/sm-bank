@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    padding: 100px;
+    height: 100vh;
+}
+/* login-area css code */
+
+#login-area h1{
+    font-family: monospace;
+    font-weight: 700;
+    font-size: 40px;
+}
+.submit-area{
+    margin-top: 40px;
+    box-shadow: 5px 5px 10px rgba(104, 102, 102, 0.568);;
+    padding: 30px;
+    border-radius: 10px;
+}form{
+    margin-top: 25px;
+}
+.btn{
+    margin-top: 20px;
+}
+.for-sign-style{
+    margin-top: 20px;
+}
+.for-sign-style a{
+    text-decoration: none;
+    font-size: 15px;
+}
+
+/* transaction-area css code */
+#transaction-area{
+    display: none;
+}
+#transaction-area h1{
+    margin-bottom: 30px;
+}
+.status{
+    margin: 10px 20px;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+}
+.deposit{
+    background-color: #6A5ACD;
+
+}
+.withdraw{
+    background-color: #FFA07A;
+}
+.balance{
+    background-color: #FFA500;
+}
+footer{
+    margin-top: 150px;
+}
+footer p{
+    font-size: 12px;
+}
