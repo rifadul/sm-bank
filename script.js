@@ -15,60 +15,39 @@ loginButton.addEventListener("click",function(){
 const addDepositeBtn = document.getElementById("depositeBtn");
 addDepositeBtn.addEventListener("click",function(){
     //deposite input value read
-    const depositeAmount = document.getElementById("deposite-amount").value;
-    const depositeNumber = parseFloat(depositeAmount);
-    
+    const depositeNumber =  getInputNumber("deposite-amount");
 
-    //deposite text value read
-    const currentDeposite = document.getElementById("currentDeposite").innerText; 
-    const CurrentDepositeNumber = parseFloat(currentDeposite);
+    updateSpantext("currentDeposite",depositeNumber);  // deposite span value update
 
-
-    // update deposite balance
-    const totalDeposite = depositeNumber + CurrentDepositeNumber;
-
-    document.getElementById("currentDeposite").innerText = totalDeposite;
+    updateSpantext("currentBalance",depositeNumber);   // balance span value uptade
     // clear filde
     document.getElementById("deposite-amount").value = "";
-    
-
-// balance update 
-    const currentBalance = document.getElementById("currentBalance").innerText;
-    const CurrentBalanceNumber = parseFloat(currentBalance);
-
-
-    const totalBanlace = CurrentBalanceNumber + depositeNumber;
-    document.getElementById("currentBalance").innerText = totalBanlace;
 })
+
+function getInputNumber(id){
+    const amount = document.getElementById(id).value;
+    const converAmount = parseFloat(amount);
+    return converAmount;
+}
+
+function updateSpantext (id,addBalace){
+    const currentAmount = document.getElementById(id).innerText; 
+    const newCurrentAmount = parseFloat(currentAmount);
+    // update balance
+    const totalAmount = addBalace + newCurrentAmount;
+    document.getElementById(id).innerText = totalAmount;
+}
 
 
 // withdraw button even handle
 const addWithdrawBtn = document.getElementById("withdrawBtn");
 addWithdrawBtn.addEventListener("click",function(){
     //withdraw input value read
-    const withdrawAmount = document.getElementById("withdraw-amount").value;
-    const withdrawNumber =parseFloat(withdrawAmount);
+        const withdrawNumber =  getInputNumber("withdraw-amount") ;
 
-    // Balance text value read
-    const currentBalanceWdrw = document.getElementById("currentBalance").innerText;
-    const CurrentBalanceWdrwNumber = parseFloat(currentBalanceWdrw);
+    updateSpantext("currentWithdraw",withdrawNumber);   //  withdraw span value update
 
-    // withdraw text value read
-    const currentWithdraw = document.getElementById("currentWithdraw").innerText;
-    const CurrentWithdrawNumber = parseFloat(currentWithdraw);
-
-    // update balance
-    const balanceWithdraw = CurrentBalanceWdrwNumber - withdrawNumber;
-   
-    document.getElementById("currentBalance").innerText = balanceWithdraw;
-
-    // update withdraw balance
-    const totalWithdraw = withdrawNumber + CurrentWithdrawNumber;
-    document.getElementById("currentWithdraw").innerText = totalWithdraw;
-
+    updateSpantext("currentBalance",-1*withdrawNumber);    // update balance
     // clear filde 
     document.getElementById("withdraw-amount").value = "";
-
-    // siam
-
 })
